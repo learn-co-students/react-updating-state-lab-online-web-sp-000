@@ -5,12 +5,13 @@ export default class DigitalClicker extends Component {
     constructor() {
         super()
 
-        state={
+        this.state={
             timesClicked: 0
         }
     }
 
-    clickHandler(){
+    clickHandler =() => {
+        
         this.setState({
             timesClicked: this.state.timesClicked + 1
         })

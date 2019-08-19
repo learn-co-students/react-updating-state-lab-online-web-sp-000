@@ -16,7 +16,7 @@ export default class YouTubeDebugger extends Component {
         }
     }
 
-    clickHandlerBitrate(){
+    clickHandlerBitrate = () => {
         this.setState({
             settings: {
                 ...this.state.settings,
@@ -24,12 +24,26 @@ export default class YouTubeDebugger extends Component {
             }
         })
     }
+
+    clickHandlerResolution = () => {
+        console.log(this.state.settings.video.resolution)
+        this.setState({
+            settings: {
+                ...this.state.settings,
+                video: {
+                    resolution: '720p'
+                }
+            }
+        },
+                () => console.log(this.state.settings.video.resolution)
+        )
+    }
     
     render(){
         return(
             <div>
-                <button onClick={this.clickHandlerBitrate} class="bitrate">Bitrate</button> 
-                {/* <button onClick={this.clickHandlerResolution} class="resolution">Resolution</button> */}
+                <button onClick={this.clickHandlerBitrate} className="bitrate">Bitrate</button> 
+                <button onClick={this.clickHandlerResolution} className="resolution">Resolution</button>
             </div>
         )
     }
