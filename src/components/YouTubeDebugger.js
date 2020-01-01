@@ -31,13 +31,27 @@ export default class YouTubeDebugger extends React.Component {
   resolutionClickHandler = () => {
     console.log(this.state)
     let newSettings = {...this.state.settings}
-    newSettings.video = { resolution: '720p'}
+    newSettings.video = {...this.state.settings.video, resolution: '720p'}
     this.setState(previousState => {
       return {
+        // no need to put ...previousState here, but useful for some occasions.
+        ...previousState,
         settings: newSettings
       }
     })
   }
+
+  // handleChangeResolution = () => {
+  // this.setState({
+  //   settings: {
+  //     ...this.state.settings,
+  //     video: {
+  //       ...this.state.settings.video,
+  //       resolution: '720p'
+  //     }
+  //   }
+  // });
+
 
   render() {
     return(
