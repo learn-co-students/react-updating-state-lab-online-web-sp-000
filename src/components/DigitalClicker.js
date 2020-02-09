@@ -13,6 +13,7 @@ export default class DigitalClicker extends React.Component {
     handleClick = () => {
         //let newTimesClicked = this.state.timesClicked + 1
         this.setState( previousState => {
+            //console.log("p:", previousState)
             return {
                 timesClicked: previousState.timesClicked + 1
             }
@@ -22,7 +23,7 @@ export default class DigitalClicker extends React.Component {
     render(){
         return(
             <div>
-            <button onclick={this.handleClick}>{this.state.timesClicked}</button>
+            <button onClick={this.handleClick}>{this.state.timesClicked}</button>
             </div>
         )
     }
