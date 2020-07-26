@@ -1,6 +1,6 @@
 import React from 'react';
 
- class DigitalClickers extends React.Component {
+export default class DigitalClickers extends React.Component {
   constructor () {
       super();
 
@@ -27,4 +27,3 @@ import React from 'react';
             )
    }
 }
-export default DigitalClickers
