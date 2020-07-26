@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default class YouTubeDebugger extends React.Component {
+ class YouTubeDebugger extends React.Component {
     constructor() {
       super();
   
@@ -53,7 +53,7 @@ export default class YouTubeDebugger extends React.Component {
     }
   }
   
-
+  export default YouTubeDebugger
 
  
 
