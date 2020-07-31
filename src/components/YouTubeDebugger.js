@@ -5,7 +5,16 @@ export class YouTubeDebugger extends Component {
   constructor (props) {
     super(props)
 
-    this.state = {}
+    this.state = {
+      errors: [],
+      user: null,
+      settings: {
+        bitrate: 8,
+        video: {
+          resolution: '1080p'
+        }
+      }
+    }
   }
 
   handleBitrate = e => this.setState(s => ({ ...s, settings: { bitrate: 12 } }))
