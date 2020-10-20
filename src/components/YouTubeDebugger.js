@@ -23,16 +23,25 @@ let settings = this.state.settings
 
 
 
-
-
 handleClicker = () => {
-
+let okay = this.state.settings
+if (okay.video.resolution === "1080p") {
    this.setState(previousState => {
      return {errors:[], user:null, settings: {bitrate:8, video:{resolution: '720p'
         }
       }
     }
   })
+} else {
+  this.setState(previousState => {
+    return {errors:[], user:null, settings: {bitrate:8, video:{resolution: '1080p'
+       }
+     }
+   }
+ })
+
+}
+
  }
 
 
