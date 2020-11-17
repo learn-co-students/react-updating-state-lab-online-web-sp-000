@@ -1,28 +1,56 @@
-const { Component } = require("react");
+import React, { Component } from "react";
 
 // Code YouTubeDebugger Component Here
 export default class YouTubeDebugger extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       errors: [],
       user: null,
       settings: {
-      bitrate: 8,
-      video: {
-      resolution: '1080p'
-    }
-  }
+        bitrate: 8,
+        video: {
+        resolution: '1080p'
+        }
+      }
     }
   }
 
-  handleClick = () => {
-    this.
-  }
+  bitrateHandler = () => {
+        this.setState(previousState => {
+            return {
+                ...previousState,
+                settings: {
+                    ...previousState.settings,
+                    bitrate: 12,
+                }
+            }
+        })
+    }
+
+
+    resolutionHandler = () => {
+        this.setState(previousState => {
+            return {
+                ...previousState,
+                settings: {
+                    
+                    ...previousState.settings,
+                    video: {
+                        resolution: "720p"
+                    }
+
+                }
+            }
+        })
+    }
 
   render(){
     return(
-      <button class="bitrate" onClick={this.handleClick}></button>
+      <div>
+        <button onClick={this.bitrateHandler} className="bitrate" >bitrate</button>
+      <button onClick={this.resolutionHandler} className="resolution">resolution</button>
+      </div>
     )
   }
 }
