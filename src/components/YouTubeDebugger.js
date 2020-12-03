@@ -26,9 +26,12 @@ export default class YouTubeDebugger extends Component {
 
     handleRes = () => {
         this.setState({
-            video: {
-                ...this.state.settings.video,
-                resolution: '720'
+            settings: {
+                ...this.state.settings,
+                video: {
+                    ...this.state.settings.video,
+                    resolution: '720p'
+                }
             }
         });
     }
